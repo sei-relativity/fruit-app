@@ -8,15 +8,21 @@ class App extends Component {
 
     // initalize the search value to an empty string
     this.state = {
-      searchValue: ''
+      searchValue: '',
+      fruitsToDisplay: this.props.fruits
     }
   }
 
   handleSearchChange = (event) => {
     const textValue = event.target.value;
 
+    const filteredFruitList = this.props.fruits.filter(function(fruit) {
+      return fruit.toLowerCase().includes(textValue.toLowerCase());
+    });
+
     this.setState({
-      searchValue: textValue
+      searchValue: textValue,
+      fruitsToDisplay: filteredFruitList
     });
   }
 
@@ -27,7 +33,7 @@ class App extends Component {
         <Search
           value={this.state.searchValue}
           onChange={this.handleSearchChange} />
-        <FruitList fruits={this.props.fruits} />
+        <FruitList fruits={this.state.fruitsToDisplay} />
       </div>
     );
   }
