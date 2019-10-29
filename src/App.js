@@ -6,7 +6,7 @@ class App extends Component {
     return (
       <div>
         <h1>Fruits App</h1>
-        <FruitList />
+        <FruitList fruits={this.props.fruits} />
       </div>
     );
   }

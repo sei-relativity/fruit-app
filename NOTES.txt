@@ -4,7 +4,7 @@ Before Starting An App / App Structure:
     - ~ App (Container)
       - Search
       - ~ List  (Container)
-        - Item(s)
+        - X Item(s)
 2. Props
     - Fruits [Array]
 3. State
